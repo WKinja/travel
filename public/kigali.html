@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Kigali</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Kigali.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Kigali</h1>
+    <p>Rwanda’s modern, green, and clean capital nestled among rolling hills.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Kigali is a calm and beautifully organized city known for its cleanliness, safety, and scenic landscapes. It offers modern urban experiences with deep cultural heritage and access to Rwanda’s natural wonders.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Kigali became Rwanda’s capital in 1962. It’s a city of transformation and healing, especially after the 1994 genocide. Today, it’s a symbol of peace and progress, with memorials preserving national memory.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://kgm.rw/" target="_blank">Kigali Genocide Memorial</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g293829-d316713-Reviews-Inema_Arts_Center-Kigali_Kigali_Province.html" target="_blank">Inema Arts Center</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g293829-d8321144-Reviews-Kimironko_Market-Kigali_Kigali_Province.html" target="_blank">Kimironko Market</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g293829-d15007860-Reviews-Campaign_Against_Genocide_Museum-Kigali_Kigali_Province.html" target="_blank">Campaign Against Genocide Museum</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Try brochettes, sambaza, and isombe. Notable restaurants include:</p>
+      <ul>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293829-d316714-Reviews-Heaven_Restaurant_Boutique_Hotel-Kigali_Kigali_Province.html" target="_blank">Heaven Restaurant</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293829-d8657285-Reviews-Papyrus-Kigali_Kigali_Province.html" target="_blank">Papyrus</a> – Local fusion in a laid-back setting</li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293829-d13354484-Reviews-Meze_Fresh-Kigali_Kigali_Province.html" target="_blank">Meze Fresh</a> – Burrito bar with African twist</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li>Rooftop bars like Ubumwe Grande Hotel Lounge</li>
+        <li>Papyrus – Chill music and cocktails</li>
+        <li>Choma’d – Trendy hangout for youth and visitors</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.marriott.com/en-us/hotels/kglmc-kigali-marriott-hotel/overview/" target="_blank">Kigali Marriott Hotel</a></li>
+        <li><a href="https://heavenrwanda.com/" target="_blank">Heaven Boutique Hotel</a></li>
+        <li><a href="https://airbnb.com/s/Kigali--Rwanda" target="_blank">Kigali Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

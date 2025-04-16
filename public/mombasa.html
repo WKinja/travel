@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Mombasa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Mombasa.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Mombasa</h1>
+    <p>Historic coastal city with vibrant culture and white sandy beaches.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Mombasa is a coastal city in Kenya with a rich blend of cultures, scenic beaches, and centuries-old Swahili architecture. Its relaxed coastal vibe and warm climate make it a popular destination for beach lovers, history buffs, and adventurers alike.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>As one of the oldest and busiest ports in East Africa, Mombasa has been influenced by Arab, Portuguese, British, and Indian traders. Fort Jesus, built in 1593 by the Portuguese, stands as a testament to this multicultural past.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://www.museums.or.ke/fort-jesus/" target="_blank">Fort Jesus Museum</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294210-d553709-Reviews-Nyali_Beach-Mombasa_Coast_Province.html" target="_blank">Nyali Beach</a></li>
+        <li><a href="https://www.hallerpark.com/" target="_blank">Haller Park</a></li>
+        <li><a href="https://wildlifekenya.com/mombasa-marine-park/" target="_blank">Mombasa Marine Park</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Try local delicacies such as Swahili biryani, grilled seafood, and bhajias. Recommended places include:</p>
+      <ul>
+        <li><a href="https://tamarind.co.ke/" target="_blank">Tamarind Mombasa</a> – Upscale seafood by the water</li>
+        <li><a href="https://yulsrestaurant.com/" target="_blank">Yul’s Restaurant</a> – Casual beachside dining</li>
+        <li><a href="https://blue-room.co.ke/" target="_blank">Blue Room</a> – Iconic café serving Swahili and Indian cuisine</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li><a href="https://tamarinddhow.com/" target="_blank">Tamarind Dhow</a> – Floating restaurant and music</li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294210-d15109691-Reviews-The_Lounge-Mombasa_Coast_Province.html" target="_blank">The Lounge Nyali</a></li>
+        <li>Sheba Lounge – A relaxed spot with cocktails and music</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.serenahotels.com/serenabeach" target="_blank">Serena Beach Resort</a></li>
+        <li><a href="https://www.sarovahotels.com/whitesands-mombasa/" target="_blank">Sarova Whitesands</a></li>
+        <li><a href="https://airbnb.com/s/Mombasa--Kenya" target="_blank">Mombasa Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

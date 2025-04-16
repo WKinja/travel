@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Zanzibar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Zanzibar.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Zanzibar City</h1>
+    <p>Famous for historic Stone Town, spice farms, and pristine Indian Ocean beaches.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Zanzibar City, located on the island of Unguja, is a cultural and historical gem. Its capital, Stone Town, is a UNESCO World Heritage Site, with winding alleys, carved doors, and vibrant local life. The city is a gateway to exotic spice farms and turquoise beaches.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Zanzibar was a powerful trading hub for centuries, ruled by Arabs, Persians, and Portuguese. It became the center of the East African slave trade and later, a British protectorate. Today, its rich multicultural past is preserved in its architecture and traditions.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://whc.unesco.org/en/list/173/" target="_blank">Stone Town (UNESCO Site)</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g488129-d477482-Reviews-Prison_Island-Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html" target="_blank">Prison Island</a></li>
+        <li><a href="https://www.viator.com/Zanzibar-City/d24350-ttd" target="_blank">Spice Tours</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g488129-d477491-Reviews-Forodhani_Gardens-Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html" target="_blank">Forodhani Gardens</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Enjoy Swahili delicacies, grilled seafood, and tropical fruits. Recommended places include:</p>
+      <ul>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g488129-d1960178-Reviews-Emerson_on_Hurumzi-Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html" target="_blank">Emerson on Hurumzi</a> – Rooftop dining with culture and views</li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g488129-d13349537-Reviews-Lukmaan_Restaurant-Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html" target="_blank">Lukmaan Restaurant</a> – Local buffet-style favorite</li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g488129-d4090551-Reviews-6_Degrees_South_Grill_and_Wine_Bar-Zanzibar_City_Zanzibar_Island_Zanzibar_Archipe.html" target="_blank">6 Degrees South</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li>Forodhani Night Market – Open-air evening food market</li>
+        <li>Tatu Bar – Local DJs and cocktails</li>
+        <li>Livingstone Beach Restaurant – Sunset views and chill evenings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.tembohotel.com/" target="_blank">Tembo House Hotel</a></li>
+        <li><a href="https://www.parkhyde.com/zanzibar" target="_blank">Park Hyatt Zanzibar</a></li>
+        <li><a href="https://airbnb.com/s/Zanzibar--Tanzania" target="_blank">Zanzibar Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

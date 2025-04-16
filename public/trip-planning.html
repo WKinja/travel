@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trip Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      color: white;
+      padding: 10px 30px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .trip-form {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .trip-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .trip-form input,
+    .trip-form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .trip-form label {
+      font-weight: 600;
+    }
+
+    .activities input {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .trip-form button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .trip-form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: none;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #007BFF;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Login Check on Page Load -->
+  <script>
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user || !user.email) {
+      alert("You must be logged in to plan a trip.");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div><a href="destinations.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></div>
+    <ul>
+      <li><a href="trip-planning.html">Trip Planning</a></li>
+      <li><a href="my-trips.html">My Trips</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" onclick="localStorage.removeItem('currentUser')">Logout</a></li>
+    </ul>
+  </header>
+
+  <!-- Trip Form -->
+  <form class="trip-form" id="tripForm">
+    <h2>Plan Your Trip</h2>
+
+    <label>Trip Name:</label>
+    <input type="text" name="tripName" required />
+
+    <label>Destination:</label>
+    <input type="text" name="destination" required />
+
+    <label>From:</label>
+    <input type="date" name="fromDate" required />
+
+    <label>To:</label>
+    <input type="date" name="toDate" required />
+
+    <label>Choose Activities:</label><br>
+    <div class="activities">
+      <label><input type="checkbox" name="activities" value="Sightseeing" /> Sightseeing</label>
+      <label><input type="checkbox" name="activities" value="Outdoors" /> Outdoors</label>
+      <label><input type="checkbox" name="activities" value="Adventure" /> Adventure</label>
+      <label><input type="checkbox" name="activities" value="Relaxation" /> Relaxation</label>
+    </div>
+
+    <label>Number of People:</label>
+    <input type="number" name="people" min="1" required />
+
+    <label>Accommodation Type:</label>
+    <select name="accommodation">
+      <option value="Hotel">Hotel</option>
+      <option value="Hostel">Hostel</option>
+      <option value="Airbnb">Airbnb</option>
+    </select>
+
+    <label>Transport Type:</label>
+    <select name="transport">
+      <option value="Car">Car</option>
+      <option value="Plane">Plane</option>
+      <option value="Train">Train</option>
+    </select>
+
+    <label>Budget Estimate (USD):</label>
+    <input type="number" name="budget" min="0" />
+
+    <button type="submit" id="submitBtn">Save Trip</button>
+    <div class="spinner" id="spinner"></div>
+  </form>
+
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const tripForm = document.getElementById("tripForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const spinner = document.getElementById("spinner");
+  
+    if (!currentUser || !currentUser.email) {
+      alert("You must be logged in to view your trips.");
+      window.location.href = "login.html";
+    }
+
+    tripForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      try {
+        // Show loading spinner
+        submitBtn.disabled = true;
+        spinner.style.display = "block";
+
+        const formData = new FormData(tripForm);
+        const activities = [];
+        document.querySelectorAll('input[name="activities"]:checked').forEach(checkbox => {
+          activities.push(checkbox.value);
+        });
+
+        const tripData = {
+          email: currentUser.email,
+          tripName: formData.get("tripName"),
+          destination: formData.get("destination"),
+          fromDate: formData.get("fromDate"),
+          toDate: formData.get("toDate"),
+          people: parseInt(formData.get("people")),
+          accommodation: formData.get("accommodation"),
+          transport: formData.get("transport"),
+          budget: parseFloat(formData.get("budget")) || 0,
+          activities: activities
+        };
+
+        console.log("Sending trip data:", tripData); // Debug log
+
+        const response = await fetch("http://localhost:5000/api/trips", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(tripData),
+        });
+
+        // First check if the response is JSON
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          const text = await response.text();
+          throw new Error(`Server returned ${response.status}: ${text}`);
+        }
+
+        const responseData = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(responseData.message || "Failed to save trip");
+        }
+
+        alert("Trip saved successfully!");
+        tripForm.reset();
+        window.location.href = "my-trips.html";
+        
+      } catch (error) {
+        console.error("Error saving trip:", error);
+        alert(`Error: ${error.message}`);
+      } finally {
+        // Hide loading spinner
+        submitBtn.disabled = false;
+        spinner.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

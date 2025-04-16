@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup to Your Travel Companion</title>
+  <link rel="stylesheet" href="authstyle.css" />
+</head>
+
+<body class="auth-page">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="./trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Login</button></a>
+      <a href="signup.html" class="admin-link">Signup</a>
+    </div>
+  </header>
+
+  <div class="auth-container">
+    <h2>Create Your Travel Companion Account</h2>
+
+    <form class="auth-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Create Password" required />
+
+      <!-- ✅ Role Selector -->
+      <label style="margin-top: 10px;">Select Role:</label>
+      <select id="role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit" class="auth-btn">Sign Up</button>
+    </form>
+
+    <p class="redirect-link">Already have an account? 
+      <a href="login.html">Login here</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.querySelector('.auth-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = form.querySelector('input[placeholder="Full Name"]').value;
+      const email = form.querySelector('input[placeholder="Email"]').value;
+      const password = form.querySelector('input[placeholder="Create Password"]').value;
+      const role = document.getElementById('role').value;
+
+      try {
+        const res = await fetch('http://localhost:5000/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password, role })
+        });
+
+        const data = await res.json();
+        alert(data.message);
+
+        if (res.ok) {
+          localStorage.setItem("currentUser", JSON.stringify({ name, email, role }));
+          window.location.href = role === 'admin' ? "admin-dashboard.html" : "destinations.html";
+        }
+      } catch (error) {
+        alert("Signup failed. Please try again.");
+        console.error("Signup Error:", error);
+      }
+    });
+  </script>
+
+</body>
+</html>

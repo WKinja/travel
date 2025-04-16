@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Lamu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Lamu.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Lamu</h1>
+    <p>A peaceful island town known for timeless beauty, dhow boats, and Swahili culture.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Lamu is an enchanting island off Kenya’s northern coast with no cars—just donkeys and boats. Its ancient architecture, narrow alleyways, and calm beaches offer a charming, timeless vibe. It's a unique destination for travelers who enjoy cultural depth and slow-paced living.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Lamu is one of East Africa’s oldest towns, dating back to the 14th century. A major Swahili port, it was a center of Islamic learning and trade. Its Old Town is now a UNESCO World Heritage Site due to its preserved Swahili architecture and cultural influence.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <p>Walk through Lamu Old Town, visit the Lamu Museum, take a dhow trip at sunset, and explore Shela Beach’s sand dunes and calm waters.</p>
+      <ul>
+        <li><a href="https://whc.unesco.org/en/list/1055/" target="_blank">Lamu Old Town (UNESCO)</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294210-d478098-Reviews-Lamu_Museum-Lamu_Island_Coast_Province.html" target="_blank">Lamu Museum</a></li>
+        <li><a href="https://www.getyourguide.com/lamu-l168935/lamu-sunset-dhow-cruise-t450438/" target="_blank">Sunset Dhow Cruises</a></li>
+        <li><a href="https://theculturetrip.com/africa/kenya/articles/a-guide-to-shela-village/" target="_blank">Shela Beach & Village</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Lamu cuisine is full of Swahili flavors like biryani, pilau, and seafood with coconut. Popular dining spots include:</p>
+      <ul>
+        <li><a href="https://seafrontlamu.com/" target="_blank">Seafront Café</a> – Famous for seafood and island-style dishes</li>
+        <li><a href="https://www.instagram.com/peponihotel/" target="_blank">Peponi Hotel Restaurant</a> – Great cocktails and views</li>
+        <li><a href="https://lamuhouse.com/" target="_blank">Lamu House Restaurant</a> – Upscale dining with authentic Swahili meals</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <p>Nightlife is relaxed and cultural. Dhow cruises, rooftop hangouts, and acoustic performances are the norm.</p>
+      <ul>
+        <li>Peponi Bar – Social evenings with a sea breeze</li>
+        <li>Manda Island Bonfire Nights – Available via local guides</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://peponi-lamu.com/" target="_blank">Peponi Hotel</a> – Iconic family-run boutique hotel in Shela</li>
+        <li><a href="https://lamuhouse.com/" target="_blank">Lamu House</a> – Swahili-style rooms and a pool</li>
+        <li><a href="https://themajlisresorts.com/" target="_blank">The Majlis</a> – Luxury beachfront resort on Manda Island</li>
+        <li><a href="https://airbnb.com/s/Lamu-Island--Kenya" target="_blank">Lamu Island Airbnbs</a> – Unique homes and beach villas</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

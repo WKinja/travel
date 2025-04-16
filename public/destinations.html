@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popular Destinations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 95%;
+      background-color: black;
+      color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main.hero {
+      padding-top: 120px;
+      text-align: center;
+    }
+
+    .overlay-text h1 {
+      color: #507fff;
+      margin-bottom: 10px;
+    }
+
+    .overlay-text p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .overlay-text h2 {
+      color: #507fff;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .destinations-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 0 30px 60px;
+    }
+
+    .destination-card {
+      background-color: white;
+      color: black;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .destination-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #507fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 960px) {
+      .destinations-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .destinations-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" onclick="localStorage.removeItem('currentUser')">
+        <button class="login-btn">Logout</button>
+      </a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="overlay-text">
+      <h1>Welcome!</h1>
+      <p>Your journey to planning the perfect trip starts here.</p>
+      <h2>Popular Destinations</h2>
+    </div>
+
+    <div class="destinations-container">
+      <div class="destination-card">
+        <h3>Malindi</h3>
+        <p>A coastal town known for its beaches and rich Swahili history.</p>
+        <img src="./Malindi.jpg" alt="Malindi">
+        <a href="malindi.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Lamu</h3>
+        <p>A peaceful island town known for its culture, dhows, and donkeys.</p>
+        <img src="./Lamu.jpg" alt="Lamu">
+        <a href="lamu.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Watamu</h3>
+        <p>Famous for coral reefs, clear waters, and the Watamu Marine Park.</p>
+        <img src="./Watamu.jpg" alt="Watamu">
+        <a href="watamu.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Mombasa</h3>
+        <p>Historic coastal city with vibrant culture and white sandy beaches.</p>
+        <img src="./Mombasa.jpg" alt="Mombasa">
+        <a href="mombasa.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Nairobi</h3>
+        <p>Kenya's capital blending urban life with safari adventures.</p>
+        <img src="./Nairobi.jpg" alt="Nairobi">
+        <a href="nairobi.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Arusha</h3>
+        <p>Gateway to Serengeti and Mount Kilimanjaro in Tanzania.</p>
+        <img src="./Arusha.jpg" alt="Arusha">
+        <a href="arusha.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Zanzibar City</h3>
+        <p>Stone Town and spice tours on this dreamy island destination.</p>
+        <img src="./Zanzibar.jpg" alt="Zanzibar">
+        <a href="zanzibar.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Dar es Salaam</h3>
+        <p>Tanzania’s largest city with beaches, markets, and vibrant nightlife.</p>
+        <img src="./Dar.jpg" alt="Dar es Salaam">
+        <a href="dar-es-salaam.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Kigali</h3>
+        <p>Rwanda’s clean and safe capital known for its hills and history.</p>
+        <img src="./Kigali.jpg" alt="Kigali">
+        <a href="kigali.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Bujumbura</h3>
+        <p>Lake Tanganyika’s shores meet Burundi’s culture in this peaceful city.</p>
+        <img src="./Bujumbura.jpg" alt="Bujumbura">
+        <a href="bujumbura.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Kampala</h3>
+        <p>Uganda’s energetic capital with bustling markets and scenic hills.</p>
+        <img src="./Kampala.jpg" alt="Kampala">
+        <a href="kampala.html">Learn More</a>
+      </div>
+
+      <div class="destination-card">
+        <h3>Jinja</h3>
+        <p>Adventure hub in Uganda where the Nile begins.</p>
+        <img src="./Jinja.jpg" alt="Jinja">
+        <a href="jinja.html">Learn More</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

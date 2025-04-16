@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Jinja</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Jinja.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Jinja</h1>
+    <p>Adventure capital of East Africa and source of the Nile River.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Jinja is a vibrant town in eastern Uganda located where the Nile River begins its journey from Lake Victoria. It's a paradise for adrenaline seekers, nature lovers, and those seeking scenic relaxation by the river.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Jinja was developed during the British colonial era as an industrial town. Its significance grew after being identified as the Source of the Nile by John Hanning Speke in the 19th century.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://www.viator.com/Jinja-attractions/Source-of-the-Nile/d5102-a16806" target="_blank">Source of the Nile</a></li>
+        <li><a href="https://www.adrift.ug/" target="_blank">White Water Rafting</a> on the Nile</li>
+        <li><a href="https://bujagalisanctuary.com/" target="_blank">Bujagali Falls</a></li>
+        <li><a href="https://jinjatours.com/" target="_blank">River Cruises & Quad Biking</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Fresh tilapia, nyama choma (roast meat), and Ugandan street food are popular. Try these places:</p>
+      <ul>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g480250-d1853043-Reviews-The_Black_ Lantern-Jinja_Eastern_Region.html" target="_blank">The Black Lantern</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g480250-d4070326-Reviews-The_Deli-Jinja_Eastern_Region.html" target="_blank">The Deli</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g480250-d12118759-Reviews-Bikeventures_Cafe-Jinja_Eastern_Region.html" target="_blank">Bikeventures Café</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li>Nile View Casino – Great views and casual gaming</li>
+        <li>Rumours Bar – Classic backpacker’s bar and music</li>
+        <li>Jinja Sailing Club – Drinks, views, and local crowd</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.nileriverexplorers.com/" target="_blank">Nile River Explorers</a> – Adventure lodge</li>
+        <li><a href="https://www.tripadvisor.com/Hotel_Review-g480250-d1209430-Reviews-2_Friends_Guesthouse-Jinja_Eastern_Region.html" target="_blank">2 Friends Guesthouse</a></li>
+        <li><a href="https://airbnb.com/s/Jinja--Uganda" target="_blank">Jinja Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

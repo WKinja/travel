@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Nairobi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Nairobi.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Nairobi</h1>
+    <p>Kenya’s capital city offering a unique mix of urban life, wildlife, and culture.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Nairobi is a vibrant African metropolis where towering buildings meet lush national parks. Known for its lively markets, diverse food scene, and accessibility to nature, it's a hub for travelers seeking adventure and modern comforts.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Nairobi began as a railway depot in 1899 and grew rapidly into a colonial administrative center. Today, it’s a major economic and political capital in East Africa, home to several international organizations and cultural institutions.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://www.kws.go.ke/content/nairobi-national-park" target="_blank">Nairobi National Park</a></li>
+        <li><a href="https://giraffecenter.org/" target="_blank">Giraffe Centre</a></li>
+        <li><a href="https://www.sheldrickwildlifetrust.org/" target="_blank">David Sheldrick Wildlife Trust</a></li>
+        <li><a href="https://www.nairobimuseum.or.ke/" target="_blank">Nairobi National Museum</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Enjoy Kenyan dishes like nyama choma and ugali, or international cuisine in stylish restaurants. Try:</p>
+      <ul>
+        <li><a href="https://tamarind.co.ke/carnivore/" target="_blank">Carnivore Restaurant</a> – Iconic for roasted meat</li>
+        <li><a href="https://tamarind.co.ke/" target="_blank">Inti – A Nikkei Experience</a></li>
+        <li><a href="https://www.flamingogrill.co.ke/" target="_blank">Flamingo Grill</a> – Local favorites with a modern twist</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li><a href="https://www.k1klubhouse.com/" target="_blank">K1 Klubhouse</a> – Popular with locals and tourists</li>
+        <li><a href="https://www.brewbistro.co.ke/" target="_blank">Brew Bistro</a> – Craft beer and live music</li>
+        <li>1824 Whiskey Bar – Energetic nightlife with live DJs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.villarosakenya.com/" target="_blank">Villa Rosa Kempinski</a></li>
+        <li><a href="https://www.fairmont.com/nairobi/" target="_blank">Fairmont The Norfolk</a></li>
+        <li><a href="https://airbnb.com/s/Nairobi--Kenya" target="_blank">Nairobi Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

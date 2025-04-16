@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Trips</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Watamu.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      padding: 10px 30px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 120px 20px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .trip-card {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+
+    .trip-card h3 {
+      margin-top: 0;
+      color: #007BFF;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #007BFF;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div><a href="destinations.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></div>
+    <ul>
+      <li><a href="trip-planning.html">Trip Planning</a></li>
+      <li><a href="my-trips.html">My Trips</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" onclick="localStorage.removeItem('currentUser')">Logout</a></li>
+    </ul>
+  </header>
+
+  <!-- Trip Display Area -->
+  <div class="container">
+    <h2>My Booked Trips</h2>
+    <div id="tripContainer">
+      <div class="spinner" id="loadingSpinner"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      const tripContainer = document.getElementById("tripContainer");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+
+      if (!currentUser || !currentUser.email) {
+        alert("You must be logged in to view your trips.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        // Show loading spinner
+        loadingSpinner.style.display = "block";
+        tripContainer.innerHTML = "";
+        tripContainer.appendChild(loadingSpinner);
+
+        const response = await fetch(`http://localhost:5000/api/trips/${currentUser.email}`);
+        
+        // Check if response is JSON
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          const text = await response.text();
+          throw new Error(`Server returned ${response.status}: ${text}`);
+        }
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || "Failed to fetch trips");
+        }
+
+        // Check if we got trips array or object with trips property
+        const trips = Array.isArray(data) ? data : (data.trips || []);
+        
+        if (trips.length === 0) {
+          tripContainer.innerHTML = `<p style="color:white; text-align:center; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 8px;">You haven't booked any trips yet.</p>`;
+          return;
+        }
+
+        tripContainer.innerHTML = ""; // Clear loading spinner
+
+        trips.forEach(trip => {
+          const tripCard = document.createElement("div");
+          tripCard.classList.add("trip-card");
+
+          // Format dates if they exist
+          const formatDate = (dateString) => {
+            if (!dateString) return "N/A";
+            const date = new Date(dateString);
+            return isNaN(date) ? dateString : date.toLocaleDateString();
+          };
+
+          tripCard.innerHTML = `
+            <h3>${trip.tripName || "Unnamed Trip"} (${trip.destination || "Unknown"})</h3>
+            <p><strong>From:</strong> ${formatDate(trip.fromDate || trip.startDate)} 
+               <strong>To:</strong> ${formatDate(trip.toDate || trip.endDate)}</p>
+            <p><strong>People:</strong> ${trip.people || "N/A"}</p>
+            <p><strong>Accommodation:</strong> ${trip.accommodation || "N/A"}</p>
+            <p><strong>Transport:</strong> ${trip.transport || "N/A"}</p>
+            <p><strong>Activities:</strong> ${trip.activities?.join(", ") || "None"}</p>
+            <p><strong>Budget:</strong> $${trip.budget || "0"}</p>
+          `;
+          tripContainer.appendChild(tripCard);
+        });
+
+      } catch (error) {
+        console.error("Failed to load trips:", error);
+        tripContainer.innerHTML = `
+          <div style="color:white; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 8px; text-align: center;">
+            <p>Failed to load trips. Please try again later.</p>
+            <p><small>${error.message}</small></p>
+          </div>
+        `;
+      } finally {
+        loadingSpinner.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

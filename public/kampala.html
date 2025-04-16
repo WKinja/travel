@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Discover Kampala</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Kampala.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      width: 95%;
+      background-color: black;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons .login-btn {
+      background-color: #ff7f50;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 120px 30px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #58aaff;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #90cfff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button class="login-btn">Logout</button></a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Kampala</h1>
+    <p>Uganda’s lively capital with historic sites, hills, nightlife, and rich culture.</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Kampala is a bustling city built on seven hills, offering a mix of traditional culture, colonial history, and urban energy. It's the economic and cultural heart of Uganda and offers something for every type of traveler.</p>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <p>Initially the seat of the Buganda Kingdom, Kampala became the capital during British colonial rule. It has grown into one of East Africa’s most vibrant and fastest-growing cities.</p>
+    </section>
+
+    <section>
+      <h2>Attractions</h2>
+      <ul>
+        <li><a href="https://www.ugandamuseum.or.ug/" target="_blank">Uganda Museum</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g293841-d478368-Reviews-Kasubi_Tombs-Kampala_Central_Region.html" target="_blank">Kasubi Tombs (UNESCO Site)</a></li>
+        <li><a href="https://www.visituganda.com/attractions/gaddafi-national-mosque/" target="_blank">Gaddafi Mosque (National Mosque)</a></li>
+        <li><a href="https://www.kampalawalkingtours.com/" target="_blank">Kampala Walking Tours</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>Don’t miss local dishes like luwombo, rolex (rolled eggs), and grilled meats. Best places include:</p>
+      <ul>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293841-d10704979-Reviews-Cafesserie_Kampala-Kampala_Central_Region.html" target="_blank">Cafesserie</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293841-d4415073-Reviews-2K_Restaurant-Kampala_Central_Region.html" target="_blank">2K Restaurant</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g293841-d11965926-Reviews-Piato-Kampala_Central_Region.html" target="_blank">Piato Restaurant</a> – African buffet and grill</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife</h2>
+      <ul>
+        <li>Sky Lounge – Rooftop drinks and views</li>
+        <li>Guvnor – Kampala’s legendary club</li>
+        <li>Otters Bar – Laid-back lakefront setting</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where to Stay</h2>
+      <ul>
+        <li><a href="https://www.serenahotels.com/serenakampala" target="_blank">Kampala Serena Hotel</a></li>
+        <li><a href="https://www.golfcoursehotel.com/" target="_blank">Golf Course Hotel</a></li>
+        <li><a href="https://airbnb.com/s/Kampala--Uganda" target="_blank">Kampala Airbnbs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

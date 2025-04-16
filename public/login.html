@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login to Your Travel Companion</title>
+  <link rel="stylesheet" href="authstyle.css" />
+</head>
+<body class="auth-page">
+
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="destinations.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="trip-planning.html">Trip Planning</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-trips.html">My Trips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ Login Form -->
+  <div class="auth-container">
+    <h2>Login to Your Travel Companion</h2>
+
+    <form class="auth-form">
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit" class="auth-btn">Login</button>
+    </form>
+
+    <p class="redirect-link">Don't have an account? 
+      <a href="signup.html">Sign up here</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.querySelector('.auth-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = form.querySelector('input[placeholder="Username"]').value;
+      const password = form.querySelector('input[placeholder="Password"]').value;
+
+      try {
+        const res = await fetch('http://localhost:5000/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        // Handle non-JSON errors gracefully
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("Server returned non-JSON response");
+        }
+
+        const data = await res.json();
+        alert(data.message);
+
+        if (res.ok && data.user) {
+          // ✅ Store user info
+          localStorage.setItem("currentUser", JSON.stringify(data.user));
+
+          // ✅ Redirect based on role
+          if (data.user.role === "admin") {
+            window.location.href = "admin-dashboard.html";
+          } else {
+            window.location.href = "destinations.html";
+          }
+        }
+
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Login failed. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
